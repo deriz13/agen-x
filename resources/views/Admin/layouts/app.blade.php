@@ -107,7 +107,7 @@
     <main class="content">
         @include('admin.layouts.header')
 
-    <title wire:id="uLlXBH4NYCr8lrM31eav" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;uLlXBH4NYCr8lrM31eav&quot;,&quot;name&quot;:&quot;dashboard&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;61b3ecd0&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;77d58c3e9519f7dc78264db0f2287109a24c5914e717b3cfafeb1b421bd7b334&quot;}}">Volt Laravel Dashboard</title>
+    <title wire:id="uLlXBH4NYCr8lrM31eav" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;uLlXBH4NYCr8lrM31eav&quot;,&quot;name&quot;:&quot;dashboard&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;61b3ecd0&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;77d58c3e9519f7dc78264db0f2287109a24c5914e717b3cfafeb1b421bd7b334&quot;}}">Agen-X</title>
 
         @yield('content')
 
