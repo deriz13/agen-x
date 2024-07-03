@@ -165,7 +165,39 @@
 
      @include('admin.layouts.footer')
     </main>
-
+    
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<!-- DataTables CSS (opsional) -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap4.min.css">
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": true,
+            "info": true, 
+            "autoWidth": false,
+            "responsive": true,
+            "language": {
+                "search": "Cari:",
+                "paginate": {
+                    "previous": "Sebelumnya",
+                    "next": "Berikutnya"
+                },
+                "lengthMenu": "Tampilkan _MENU_ entri",
+                "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+                "infoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+                "zeroRecords": "Data tidak ditemukan",
+                "infoFiltered": "(difilter dari total _MAX_ entri)"
+            }
+        });
+    });
+</script>
 </html>
