@@ -153,7 +153,8 @@
 
 </head>
 
-<body>    
+<body>
+       
     @include('admin.layouts.sidebar')
     <main class="content">
         @include('admin.layouts.header')

@@ -20,3 +20,4 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.
 Route::get('pesanan', [OrderController::class, 'index'])->name('order.index');
 Route::get('check-in', [CheckinController::class, 'index'])->name('checkin.index');
 Route::get('laporan', [LaporanController::class, 'index'])->name('report.index');
+Route::post('check-in', [CheckinController::class, 'updateStatus'])->name('update.status');
