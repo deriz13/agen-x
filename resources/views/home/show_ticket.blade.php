@@ -16,6 +16,9 @@
             </div>
         </div>
         <div class="card-footer ticket-footer">
+        <a href="{{ route('ticket.download', ['ticket_id' => $ticket->ticket_id]) }}" class="btn btn-primary">Download</a>
+        </div>
+        <div class="card-footer ticket-footer">
             <a href="{{ route('home') }}" class="btn btn-secondary">Kembali</a>
         </div>
      </div>

@@ -14,6 +14,7 @@ use App\Http\Controllers\LaporanController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('create/ticket', [HomeController::class, 'creteTicket'])->name('ticket.store'); 
 Route::get('ticket/{ticket_id}', [HomeController::class, 'showTicket'])->name('home.show_ticket');
+Route::get('ticket/{ticket_id}/download', [HomeController::class, 'downloadPDF'])->name('ticket.download');
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginStore'])->name('login.store');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');

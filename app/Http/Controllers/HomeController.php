@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use Illuminate\Support\Str;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Illuminate\Support\Facades\View;
 
 class HomeController extends Controller
 {
@@ -58,4 +61,30 @@ class HomeController extends Controller
 
         return view('home.show_ticket', $data);
     }
+
+    public function downloadPDF($ticket_id)
+{
+    $ticket = Ticket::where('ticket_id', $ticket_id)->first();
+    
+    if (!$ticket) {
+        abort(404);
+    }
+    $data = [
+        'ticket' => $ticket
+    ];
+    $html = View::make('home.pdf_ticket', $data)->render();
+
+    $options = new Options();
+    $options->set('isHtml5ParserEnabled', true);
+    $options->set('isRemoteEnabled', true);
+
+    $dompdf = new Dompdf($options);
+    $dompdf->loadHtml($html);
+
+    $dompdf->setPaper('A4', 'portrait');
+
+    $dompdf->render();
+
+    return $dompdf->stream('ticket.pdf');
+}
 }
