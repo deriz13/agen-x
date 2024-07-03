@@ -4,7 +4,7 @@
 <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
     <div class="card ticket-card">
         <div class="card-header ticket-header">
-            Ticket Detail
+            Ticket Berhasil Dibuat
         </div>
         <div class="card-body ticket-body">
             <div class="ticket-info">
