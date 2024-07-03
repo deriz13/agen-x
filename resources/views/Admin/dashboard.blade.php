@@ -9,10 +9,7 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="fs-5 fw-bold mb-0">Page visits</h2>
-                            </div>
-                            <div class="col text-end">
-                                <a href="#" class="btn btn-sm btn-primary">See all</a>
+                                <h2 class="fs-5 fw-bold mb-0">Ticket Yang Belum Chekin</h2>
                             </div>
                         </div>
                     </div>
@@ -20,30 +17,25 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th class="border-bottom" scope="col">Page name</th>
-                                <th class="border-bottom" scope="col">Page Views</th>
-                                <th class="border-bottom" scope="col">Page Value</th>
-                                <th class="border-bottom" scope="col">Bounce rate</th>
+                                <th class="border-0 rounded-start">#</th>
+                                <th class="border-0">Nama</th>
+                                <th class="border-0">Alamat</th>
+                                <th class="border-0">No Tlp</th>
+                                <th class="border-0">Tahun Lahir</th>
+                                <th class="border-0">No Ticket</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/index.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    3,225
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    $20
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-danger me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                        42,55%
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach($unuseds as $unused)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $unused->name }}</td>
+                                    <td>{{ $unused->address }}</td>
+                                    <td>{{ $unused->no_tlp }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($unused->birthdate)->isoFormat('D MMMM YYYY') }}</td>
+                                    <td>{{ $unused->ticket_id }}</td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -54,10 +46,7 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="fs-5 fw-bold mb-0">Page visits</h2>
-                            </div>
-                            <div class="col text-end">
-                                <a href="#" class="btn btn-sm btn-primary">See all</a>
+                                <h2 class="fs-5 fw-bold mb-0">Ticket Yang Sudah Checkin</h2>
                             </div>
                         </div>
                     </div>
@@ -65,30 +54,25 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th class="border-bottom" scope="col">Page name</th>
-                                <th class="border-bottom" scope="col">Page Views</th>
-                                <th class="border-bottom" scope="col">Page Value</th>
-                                <th class="border-bottom" scope="col">Bounce rate</th>
+                                <th class="border-0 rounded-start">#</th>
+                                <th class="border-0">Nama</th>
+                                <th class="border-0">Alamat</th>
+                                <th class="border-0">No Tlp</th>
+                                <th class="border-0">Tahun Lahir</th>
+                                <th class="border-0">No Ticket</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <th class="text-gray-900" scope="row">
-                                    /demo/admin/index.html
-                                </th>
-                                <td class="fw-bolder text-gray-500">
-                                    3,225
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    $20
-                                </td>
-                                <td class="fw-bolder text-gray-500">
-                                    <div class="d-flex">
-                                        <svg class="icon icon-xs text-danger me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                                        42,55%
-                                    </div>
-                                </td>
-                            </tr>
+                            @foreach($useds as $used)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $used->name }}</td>
+                                    <td>{{ $used->address }}</td>
+                                    <td>{{ $used->no_tlp }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($used->birthdate)->isoFormat('D MMMM YYYY') }}</td>
+                                    <td>{{ $used->ticket_id }}</td>
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -97,16 +81,49 @@
         </div>
     </div>
     <div class="col-12 col-xl-4">
-        <div class="card border-0 shadow">
-            <div class="card-header">
-                <h2 class="fs-5 fw-bold mb-0">Total Orders</h2>
-            </div>
-            <div class="card-body">
-                <p class="mb-0">
-                    <span class="h2 font-weight-bold mb-0">10</span>
-                </p>
-            </div>
+    <div class="card border-0 shadow">
+        <div class="card-header">
+            <h2 class="fs-5 fw-bold mb-0">Total Orders</h2>
+        </div>
+        <div class="card-body">
+            <canvas id="pieChart" width="400" height="400"></canvas>
         </div>
     </div>
 </div>
+</div>
+<script>
+    var ctx = document.getElementById('pieChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Total Orders'],
+            datasets: [{
+                label: 'Total Orders',
+                data: [{{ $countticket }}],
+                backgroundColor: [
+                    '#007bff', // blue color
+                ],
+                borderColor: [
+                    '#ffffff', // white color
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(0);
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
 @endsection
