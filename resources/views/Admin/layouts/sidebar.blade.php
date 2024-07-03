@@ -40,7 +40,7 @@
           </span>
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
         <a href="/dashboard" class="nav-link">
           <span class="sidebar-icon"> <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@
           <span class="sidebar-text">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item {{ request()->routeIs('order.index') ? 'active' : '' }}">
         <a href="{{ route('order.index') }}" class="nav-link">
           <span class="sidebar-icon"> <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +60,7 @@
           <span class="sidebar-text">Pesanan</span>
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item {{ request()->routeIs('checkin.index') ? 'active' : '' }}">
         <a href="{{ route('checkin.index') }}" class="nav-link">
           <span class="sidebar-icon"> <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@
           <span class="sidebar-text">Check-in</span>
         </a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item {{ request()->routeIs('report.index') ? 'active' : '' }}">
         <a href="{{ route('report.index') }}" class="nav-link">
           <span class="sidebar-icon"> <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
