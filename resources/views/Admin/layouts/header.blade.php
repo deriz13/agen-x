@@ -2,7 +2,6 @@
   <div class="container-fluid px-0">
     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
       <div class="d-flex align-items-center"></div>
-      <!-- Navbar links -->
       <ul class="navbar-nav align-items-center">
         <li class="nav-item dropdown ms-lg-3">
         <div class="media d-flex align-items-center">
@@ -11,7 +10,6 @@
             </a>
         </div>
           <div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
-            
             <div role="separator" class="dropdown-divider my-1"></div>
             <a class="dropdown-item d-flex align-items-center">
               <div wire:id="idgeBkBjhlkRNGJLWvxJ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;idgeBkBjhlkRNGJLWvxJ&quot;,&quot;name&quot;:&quot;logout&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;0e6e08b1&quot;,&quot;data&quot;:[],&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;6e19d0aeecec4884b187f762c77d97e72dc5f37df14ad8e39fd3ef7fa37c002b&quot;}}" wire:click='logout' >

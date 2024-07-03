@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
+                        <table id="dataTable" class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
                                 <th class="border-0 rounded-start">#</th>
@@ -46,12 +46,12 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h2 class="fs-5 fw-bold mb-0">Ticket Yang Sudah Checkin</h2>
+                                <h2 class="fs-5 fw-bold mb-0">Ticket Yang Sudah Chekin</h2>
                             </div>
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-items-center table-flush">
+                        <table id="dataTable2" class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
                                 <th class="border-0 rounded-start">#</th>
@@ -96,17 +96,17 @@
     var myPieChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['Total Orders'],
+            labels: ['Total Pesanan'],
             datasets: [{
-                label: 'Total Orders',
+                label: 'Total Pesanan',
                 data: [{{ $countticket }}],
                 backgroundColor: [
-                    '#007bff', // blue color
+                    '#007bff',
                 ],
                 borderColor: [
-                    '#ffffff', // white color
+                    '#ffffff',
                 ],
-                borderWidth: 1
+                borderWidth: 5
             }]
         },
         options: {

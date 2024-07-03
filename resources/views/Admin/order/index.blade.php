@@ -35,8 +35,8 @@
 								<i class="fa fa-edit my-auto"></i>
 							</a>
                             <button onclick="deleteItem('{{ $order->id }}')" type="button" class="btn btn-danger btn-sm">
-										        	<i class="fa fa-trash"></i>
-										    </button>
+								<i class="fa fa-trash"></i>
+							</button>
                         </td>
                     </tr>
                     @endforeach

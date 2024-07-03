@@ -9,9 +9,9 @@
                     @csrf
                     <div class="form-group mb-0">
                         <label for="ticket_id">Masukkan No Ticket</label>
-                        <input type="text" class="form-control" id="ticket_id" name="ticket_id" value="{{ old('ticket_id', $ticket_id ?? '') }}">
+                        <input type="text" class="form-control" id="ticket_id" name="ticket_id" value="{{ old('ticket_id', $ticket_id ?? '') }}" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
                 </form>
             </div>
         </div>

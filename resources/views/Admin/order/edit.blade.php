@@ -8,7 +8,7 @@
 @endif
 <form action="{{ route('order.update', $order->id) }}" method="POST">
     @csrf
-    @method('PUT') <!-- Menambahkan method PUT -->
+    @method('PUT')
     <div class="row">
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }} col-md-6 col-lg-12">
             <label for="name">Nama</label>

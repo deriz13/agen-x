@@ -17,13 +17,13 @@ class HomeController extends Controller
     }
 
     public static function generateTicketId()
-{
-    do {
-        $ticketId = '' . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
-    } while (Ticket::where('ticket_id', $ticketId)->exists());
+    {
+        do {
+            $ticketId = '' . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
+        } while (Ticket::where('ticket_id', $ticketId)->exists());
 
-    return $ticketId;
-}
+        return $ticketId;
+    }
 
     public function creteTicket(Request $request)
     {
@@ -50,7 +50,6 @@ class HomeController extends Controller
             ->withSuccess("Ticket berhasil dibuat");
                 
         } catch (\Exception $e) {
-            dd($e);
             return redirect()->back()->withError('Ticket gagal dibuat');
         }
     }
@@ -63,28 +62,28 @@ class HomeController extends Controller
     }
 
     public function downloadPDF($ticket_id)
-{
-    $ticket = Ticket::where('ticket_id', $ticket_id)->first();
-    
-    if (!$ticket) {
-        abort(404);
+    {
+        $ticket = Ticket::where('ticket_id', $ticket_id)->first();
+        
+        if (!$ticket) {
+            abort(404);
+        }
+        $data = [
+            'ticket' => $ticket
+        ];
+        $html = View::make('home.pdf_ticket', $data)->render();
+
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isRemoteEnabled', true);
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        return $dompdf->stream('ticket.pdf');
     }
-    $data = [
-        'ticket' => $ticket
-    ];
-    $html = View::make('home.pdf_ticket', $data)->render();
-
-    $options = new Options();
-    $options->set('isHtml5ParserEnabled', true);
-    $options->set('isRemoteEnabled', true);
-
-    $dompdf = new Dompdf($options);
-    $dompdf->loadHtml($html);
-
-    $dompdf->setPaper('A4', 'portrait');
-
-    $dompdf->render();
-
-    return $dompdf->stream('ticket.pdf');
-}
 }
