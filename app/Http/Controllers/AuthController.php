@@ -16,19 +16,19 @@ class AuthController extends Controller
     }
 
     public function loginStore(Request $request)
-    {
-        // Validasi input dari form
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('dashboard')->withSuccess('Signed in');
-        }
-        
-        return redirect()->route('login')->with('error', 'Login details are not valid');
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
+
+    $credentials = $request->only('email', 'password');
+    if (Auth::attempt($credentials)) {
+        return redirect()->route('dashboard.index')->withSuccess('Signed in');
     }
+    
+    return redirect()->route('login')->with('error', 'Email atau password salah.');
+}
 
     public function logout() {
         Session::flush();

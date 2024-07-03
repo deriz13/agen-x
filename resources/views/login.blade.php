@@ -120,17 +120,11 @@
                         <div class="text-center text-md-center mb-4 mt-md-0">
                             <h1 class="mb-0 h3">Login</h1>
                         </div>
-                        <form action="{{ route('login.store') }}" class="mt-4">
+                        <form action="{{ route('login.store') }}" method="POST" class="mt-4">
                         @csrf
-                        @if (Session::has('success'))
-                            <div class="alert alert-success alert-dismissible" role="alert">
-                                {{ Session::get('success') }}
-                            </div>
-                        @endif
-
-                        @if(session('message'))
-                            <div class="alert alert-success">
-                                {{ session('message') }}
+                        @if (Session::has('error'))
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                                {{ Session::get('error') }}
                             </div>
                         @endif
                             <div class="form-group mb-4">
@@ -139,7 +133,7 @@
                                     <span class="input-group-text" id="basic-addon1">
                                         <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                                     </span>
-                                    <input type="email" class="form-control" name="email" placeholder="example@company.com" id="email" autofocus required>
+                                    <input type="email" class="form-control" name="email" placeholder="Email" id="email" autofocus required>
                                 </div>  
                             </div>
                             <!-- End of Form -->
