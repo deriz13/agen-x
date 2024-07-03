@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Illuminate\Support\Facades\View;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class HomeController extends Controller
 {
@@ -57,7 +58,12 @@ class HomeController extends Controller
     public function showTicket($ticket_id)
     {
         $data['ticket'] = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
-
+        $ticketData = "Nama: " . $data['ticket']->name . "\n" .
+                  "Alamat: " . $data['ticket']->address . "\n" .
+                  "No HP: " . $data['ticket']->no_tlp . "\n" .
+                  "Tanggal Lahir: " . \Carbon\Carbon::parse($data['ticket']->birthdate)->isoFormat('D MMMM YYYY') . "\n" .
+                  "No Ticket: " . $data['ticket']->ticket_id;
+        $data['qrCode'] = QrCode::size(200)->generate($ticketData);
         return view('home.show_ticket', $data);
     }
 
