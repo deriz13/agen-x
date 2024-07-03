@@ -25,8 +25,6 @@
     <!-- Fontawesome -->
     <link type="text/css" href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     
-    <!-- Sweet Alert -->
-    <link type="text/css" href="/vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
     
     <!-- Notyf -->
     <link type="text/css" href="/vendor/notyf/notyf.min.css" rel="stylesheet">
@@ -132,10 +130,6 @@
 
     <!-- Datepicker -->
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker.min.js"></script>
-
-    <!-- Sweet Alerts 2 -->
-    <script src="/assets/js/sweetalert2.all.min.js"></script>
-
     <!-- Moment JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
@@ -172,7 +166,7 @@
 
 <!-- DataTables CSS (opsional) -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap4.min.css">
-
+<script src="{{ url('assets/js/sweetalert/sweetalert.min.js') }}"></script>
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script>
